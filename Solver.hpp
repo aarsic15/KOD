@@ -9,7 +9,10 @@ class Solver
 {
     public:
 
-        Solver() = default;
+        Solver()
+        {
+            grid.resize(350, std::vector<std::vector<int>>(350));
+        }
         
         Cestica& addObject(sf::Vector2f position, float radius)
         {
@@ -87,7 +90,7 @@ class Solver
         
         
         int grid_size = 10;
-        std::vector<int> grid[350][350];
+        std::vector<std::vector<std::vector<int>>> grid;
 
         void applyGravity()
         {

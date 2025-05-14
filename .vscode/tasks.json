@@ -2,8 +2,8 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ build active file",
-            "command": "/usr/bin/g++",
+            "label": "C/C++: g++.exe build active file",
+            "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -13,9 +13,15 @@
                 "${workspaceFolder}/State.cpp",
                 "${workspaceFolder}/CesticeSimulacija.cpp",
                 "${workspaceFolder}/Cestica.cpp",
+                "-Iinclude",
+                "-Iinclude/SFML",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
-                "-lsfml-graphics", "-lsfml-window", "-lsfml-system", "-lm"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-Llib",
+                "-lsfml-graphics",
+                "-lsfml-window",
+                "-lsfml-system",
+                "-lm"
             ],
             "options": {
                 "cwd": "${fileDirname}"

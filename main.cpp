@@ -1,6 +1,6 @@
 #include <iostream>
-#include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
 
 #include "State.hpp"
 #include "MainMenu.hpp"
@@ -10,15 +10,15 @@
 
 enum class AppState{MAIN_MENU, CESTICE, SHOWCASE2, SHOWCASE3};
 
-static sf::Color getColorFromFloat(float t)
-{
-    const float r = sin(t);
-    const float g = sin(t + 0.33f * 2.0f * M_PI);
-    const float b = sin(t + 0.66f * 2.0f * M_PI);
-    return {static_cast<uint8_t>(255.0f * r * r),
-            static_cast<uint8_t>(255.0f * g * g),
-            static_cast<uint8_t>(255.0f * b * b)};
-}
+// static sf::Color getColorFromFloat(float t)
+// {
+//     const float r = sin(t);
+//     const float g = sin(t + 0.33f * 2.0f * M_PI);
+//     const float b = sin(t + 0.66f * 2.0f * M_PI);
+//     return {static_cast<uint8_t>(255.0f * r * r),
+//             static_cast<uint8_t>(255.0f * g * g),
+//             static_cast<uint8_t>(255.0f * b * b)};
+// }
 
 int main()
 {
@@ -40,7 +40,7 @@ int main()
     if (!Arial.openFromFile("arial/ARIAL.TTF"))
     {
         std::cerr << "Couldn't load font\n";
-        return -1;
+         return -1;
     }
 
     const float radius = 5.0f;
@@ -53,7 +53,6 @@ int main()
     const int max_spawner = 24;  
     int num_spawner = 24;
     int spawned_count = 0;
-
 
     Solver solver;
     //solver.setBoundary({WINDOW_WIDTH/2, WINDOW_HEIGHT/2}, (WINDOW_WIDTH - 850.0f) / 2);
